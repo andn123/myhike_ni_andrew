@@ -1,6 +1,6 @@
 // Import specific functions from the Firebase Auth SDK
-import { onAuthStateChanged } from "firebase/auth"; //Detect login state
 import { auth } from "/src/firebaseConfig.js"; //Firebase authentication connection
+import { onAuthStateChanged } from "firebase/auth"; //Detect login state
 import { logoutUser } from "/src/authentication.js"; //Perform logout action
 
 class SiteNavbar extends HTMLElement {
