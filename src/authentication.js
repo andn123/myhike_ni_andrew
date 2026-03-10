@@ -63,7 +63,7 @@ export async function signupUser(name, email, password) {
   // Update the user's profile with the display name, NOTE: updateProfile is a built-in Firebase function
   await updateProfile(user, { displayName: name });
 
-  // After creating the user, we can also create a Firestore document for them with default values for country and school.
+  // After creating the user, we can also create a Firestore document for them with default values for country (changed to city for Lab 10) and school.
   // This demonstrates how to link Auth users to Firestore data.
   // Use 'try' 'catch' to handle any errors that might occur during Firestore document creation.
   try {
@@ -71,7 +71,7 @@ export async function signupUser(name, email, password) {
     await setDoc(doc(db, "users", user.uid), {
       name: name,
       email: email,
-      country: "Canada", // Default value
+      city: "Vancouver", // Default value
       school: "BCIT", // Default value
     });
     console.log("Firestore user document created successfully!");
